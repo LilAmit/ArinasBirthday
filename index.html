@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יום הולדת שמח לארינה!!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&family=Rubik+Bubbles&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating background elements -->
+    <div class="bg-hearts" id="bgHearts"></div>
+    <div class="bg-sparkles" id="bgSparkles"></div>
+    <div class="balloons" id="balloons"></div>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="letter-backdrop" id="letterBackdrop"></div>
+
+    <!-- Intro / Envelope Section -->
+    <section class="intro-section" id="introSection">
+        <!-- Floating photos around envelope -->
+        <div class="floating-photo pos-tl" data-type="image" data-src="image1.jpg">
+            <img src="image1.jpg" alt="זיכרון מתוק" loading="lazy">
+            <div class="item-overlay">💕</div>
+        </div>
+        <div class="floating-photo pos-tr" data-type="image" data-src="image2.jpg">
+            <img src="image2.jpg" alt="זיכרון מתוק" loading="lazy">
+            <div class="item-overlay">💖</div>
+        </div>
+        <div class="floating-photo pos-bl" data-type="image" data-src="image3.jpg">
+            <img src="image3.jpg" alt="זיכרון מתוק" loading="lazy">
+            <div class="item-overlay">💗</div>
+        </div>
+        <div class="floating-photo pos-br" data-type="image" data-src="image4.jpg">
+            <img src="image4.jpg" alt="זיכרון מתוק" loading="lazy">
+            <div class="item-overlay">💘</div>
+        </div>
+
+        <div class="intro-content">
+            <h1 class="intro-title">
+                <span class="title-word">יום</span>
+                <span class="title-word">הולדת</span>
+                <span class="title-word">שמח</span>
+                <span class="title-word">לארישה</span>
+                <span class="cake-emoji">🎂</span>
+            </h1>
+            <p class="intro-subtitle">לחצי על המעטפה כדי לפתוח את הברכה 💌</p>
+
+            <!-- Envelope -->
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="letter" id="letter">
+                        <button class="letter-close" id="letterClose" aria-label="סגור">✕</button>
+                        <div class="letter-content">
+                            <div class="letter-hearts">💖 💕 💗</div>
+                            <h2>ארישה הקטנה והחמודה</h2>
+                            <p class="letter-text">
+                                יום הולדת שמח לילדה הכי יפה ומתוקה וחמודה בכל העולם
+                                שהיא כבר בת <span class="age">16</span> אבל זה לא אומר
+                                שהיא בגיל של עמית והיא עדיין יותר קטנה ממנו כמו בייבי
+                                ואת הכי נמוכה ותינוקת בכל העולם וזה ככה יהיה לכל החיים
+                                לא משנה מה 
+                            </p>
+                            <p class="letter-text">
+                                ואת תקבלי ליום הולדת את המתנות הכי טובות בעוולם
+                                שאת בטוח תשתמשי בהם למשך הכי הרבה הזמן 
+                            </p>
+                            <p class="letter-text">
+                                ואני הכי אוהב אותך בכל העולם למשך כל החיים 
+                            </p>
+                            <p class="letter-text big-text">
+                                ואנחנו הכי חייבים להתחתן ואני לא אגיד לך מתי
+                                ואז זה יהיה ההפתעה הכי גדולה בכל החיים!!!!!!!! 
+                            </p>
+                            <p class="signature">
+                               ונחייה ביחד לכל החיים!!!!<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="envelope-front"></div>
+                    <div class="envelope-seal">💗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid Scatter (photos + video between sections) -->
+    <section class="mid-section">
+        <div class="collage">
+            <div class="collage-item size-md rot-pos" data-type="image" data-src="image5.jpg">
+                <img src="image5.jpg" alt="זיכרון מתוק" loading="lazy">
+                <div class="item-overlay">💝</div>
+            </div>
+            <div class="collage-item size-lg rot-neg" data-type="video" data-src="video1.MOV">
+                <video muted autoplay loop playsinline preload="auto" class="thumb-video">
+                    <source src="video1.MOV" type="video/quicktime">
+                    <source src="video1.MOV" type="video/mp4">
+                </video>
+                <div class="play-icon">▶</div>
+                <div class="item-overlay">🎬</div>
+            </div>
+            <div class="collage-item size-md rot-pos" data-type="image" data-src="image6.jpg">
+                <img src="image6.jpg" alt="זיכרון מתוק" loading="lazy">
+                <div class="item-overlay">💞</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="סגור">✕</button>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <!-- Birthday Wish Section -->
+    <section class="wish-section">
+        <!-- Floating photo next to wish -->
+        <div class="floating-photo pos-wl" data-type="image" data-src="image7.jpg">
+            <img src="image7.jpg" alt="זיכרון מתוק" loading="lazy">
+            <div class="item-overlay">💓</div>
+        </div>
+
+        <div class="cake-container">
+            <div class="cake">
+                <div class="cake-layer bottom"></div>
+                <div class="cake-layer middle"></div>
+                <div class="cake-layer top"></div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+        </div>
+        <h2 class="wish-title">16 שנים של ילדה קטנה ומתוקה</h2>
+        <p class="wish-text">
+           והכי חשוב שארינה תזכור שאני הכי אוהב אותה למשך כל החיים!!!<br>
+        </p>
+        <button class="surprise-btn" id="surpriseBtn">לחצי להפתעה! 🎉</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-hearts">💕 💖 💗 💘 💝 💞 💓</div>
+    </footer>
+
+    <!-- Music toggle button -->
+    <button class="music-toggle" id="musicToggle" aria-label="הפעלת/עצירת מוזיקה">🎵</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
