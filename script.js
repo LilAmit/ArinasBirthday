@@ -409,36 +409,40 @@ function showSurpriseMessage() {
         transform: translate(-50%, -50%) scale(0);
         background: linear-gradient(135deg, #ff1493, #ff69b4);
         color: #fff;
-        padding: 3rem 2rem;
+        padding: clamp(1.8rem, 5vw, 3rem) clamp(1.2rem, 4vw, 2rem);
         border-radius: 25px;
-        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-size: clamp(1rem, 3vw, 1.7rem);
         font-weight: 900;
         text-align: center;
         box-shadow: 0 20px 60px rgba(199, 21, 133, 0.6);
         border: 5px solid #fff;
         z-index: 10000;
-        max-width: 90vw;
+        max-width: 92vw;
+        max-height: 90vh;
+        overflow-y: auto;
         transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         font-family: 'Heebo', sans-serif;
+        -webkit-tap-highlight-color: transparent;
     `;
     msg.innerHTML = `
         <button id="surpriseClose" aria-label="סגור" style="
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             border: 2px solid #fff;
             background: rgba(255, 255, 255, 0.2);
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.25s ease, background 0.25s ease;
+            -webkit-tap-highlight-color: transparent;
         " onmouseover="this.style.transform='scale(1.15) rotate(90deg)';this.style.background='rgba(255,255,255,0.4)'"
           onmouseout="this.style.transform='scale(1) rotate(0deg)';this.style.background='rgba(255,255,255,0.2)'">✕</button>
         <div style="font-size: 3rem; margin-bottom: 1rem;">💖✨🎉✨💖</div>
